@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+def is_program_args_valid?
+  if (ARGV.length != 1)
+    puts "Usage: name-sorter <filename>"
+    return false
+  end
+  return true
+end
+
+exit(-1) unless is_program_args_valid?
+
+file_name = ARGV.first
+
+puts "hello #{file_name}"
+
+lines = File.readlines(file_name)
+
+lines.each do |line| 
+  if not(line.chomp().empty?)
+       line.split
+  end
+end
+
+puts 'end'

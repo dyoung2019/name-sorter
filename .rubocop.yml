@@ -14,4 +14,3 @@ AllCops:
   Exclude:
     - bin/*
     - spec/spec_helper.rb
-    - Gemfile

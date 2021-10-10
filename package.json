@@ -1,0 +1,19 @@
+{
+  "name": "name-sorter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "rubocop",
+    "test": "rspec"
+  },
+  "bin": {
+    "name-sorter": "./name-sorter"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
