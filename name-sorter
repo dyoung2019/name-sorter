@@ -1,16 +1,17 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative './src/Parser'
-require_relative './src/NameEntry'
+require_relative './src/sort_into_names'
+require_relative './src/export'
+require_relative './src/report'
 
-def is_args_valid?(args)
-  return args.length == 1
+def args_valid?(args)
+  args.length == 1
 end
 
 def print_usage
-  puts "Usage: name-sorter <filename>"
-end 
+  puts 'Usage: name-sorter <filename>'
+end
 
 def print_file_error(file_name)
   puts "ERROR: File not found - #{file_name}"
@@ -19,40 +20,17 @@ end
 def abort_application
   print_usage
   exit(-1)
-end 
-
-def to_entries(lines) 
-  parser = Parser.new()
-  ordered_names = lines.map do |line| 
-    original = line.chomp
-    tokens = parser.parse(original)
-    name = NameEntry.new(original, tokens)
-  end
 end
 
-def read_and_sort_names(file_name)
-  lines = File.readlines(file_name)
-  ordered_names = to_entries(lines).sort
-end
-
-def report(names) 
-  names.each { |e | puts e.full_name }
-end
-
-def export(names) 
-  f = File.open('./sorted-names-list.txt', File::CREAT | File::TRUNC | File::WRONLY)
-  names.each { |n| f.write("#{n.full_name}\n") }
-  f.close()
-end 
-
-abort_application() unless is_args_valid?(ARGV)
+abort_application unless args_valid?(ARGV)
 
 input_file = ARGV.first
 
-print_file_error(input_file) unless File.exist?(input_file)
-
-names = read_and_sort_names(input_file)
-
-report(names)
-
-export(names)
+if File.exist?(input_file)
+  lines = File.readlines(input_file)
+  names = sort_into_names(lines)
+  report(names)
+  export(names)
+else
+  print_file_error(input_file)
+end

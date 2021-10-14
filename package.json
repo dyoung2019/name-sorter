@@ -1,11 +1,7 @@
 {
   "name": "name-sorter",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "ruby implementaion of GlobalX coding assessment",
   "scripts": {
     "lint": "rubocop",
     "test": "rspec"
@@ -13,7 +9,7 @@
   "bin": {
     "name-sorter": "./name-sorter"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["ruby", "rspec", "rubocop"],
+  "author": "David Young",
   "license": "ISC"
 }
