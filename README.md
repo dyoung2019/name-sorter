@@ -33,6 +33,12 @@ If you don't have bundler installed, check out this [link](https://bundler.io/)
 > name-sorter <file here>
 ```
 
+1. Read files in
+2. Sort lines as names using surname then given name
+3. Reports names (i.e. print) to screen
+4. Export names (i.e. overwrites) into file 'sorted-names-list.txt'
+
+
 ### Linter
 
 ```bash
