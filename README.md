@@ -1,1 +1,3 @@
-# name-dropper
+# name-sorter
+
+## INSTRUCTIONS

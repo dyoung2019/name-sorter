@@ -11,5 +11,11 @@ RSpec.describe NameEntry do
     back = NameEntry.new('A Aaron', {surname: 'Aaron', given_names: 'A'})
     front = NameEntry.new('A Baker', {surname: 'Baker', given_names: 'A'})
     expect(front <=> back).to eq 1
+  end
+
+  it "first name sorting" do 
+    b_b = NameEntry.new('B Baker', {surname: 'Baker', given_names: 'B'})
+    a_b = NameEntry.new('A Baker', {surname: 'Baker', given_names: 'A'})
+    expect(b_b <=> a_b).to eq 1
   end   
 end
