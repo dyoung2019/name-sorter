@@ -30,7 +30,7 @@ If you don't have bundler installed, check out this [link](https://bundler.io/)
 ### To run app
 
 ```bash
-> name-sorter <file here>
+> ./name-sorter <file here>
 ```
 
 1. Read files in
